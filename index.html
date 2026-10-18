@@ -56,6 +56,11 @@
                 <a class="button" href="https://calendly.com/shreegaur/30min" target="_blank" rel="noopener noreferrer">Book a Free Introductory Call</a>
                 <a class="button button-secondary" href="#support">Explore Support Options</a>
               </div>
+              <button class="availability-trigger" type="button" data-open-availability aria-haspopup="dialog">
+                <span class="availability-pulse" aria-hidden="true"></span>
+                <span><strong>View live availability</strong><small>Real appointment times from Calendly</small></span>
+                <span class="availability-arrow" aria-hidden="true">→</span>
+              </button>
             </div>
             <div class="home-hero-image">
               <img src="assets/images/clarvia-interior-hero.webp" alt="A warm, quiet room prepared for a reflective conversation" width="1586" height="992" fetchpriority="high" />
@@ -80,10 +85,10 @@
             <p>Choose the area closest to what you are experiencing.</p>
           </div>
           <div class="home-pathway-grid">
-            <a class="home-pathway" href="general-counselling.html"><span>01</span><h3>Emotional wellbeing</h3><p>Anxiety, low mood, grief, stress or feeling stuck.</p><b aria-hidden="true">→</b></a>
-            <a class="home-pathway" href="aod-counselling.html"><span>02</span><h3>Alcohol &amp; other drugs</h3><p>Your use, changing habits, or the impact on someone you care about.</p><b aria-hidden="true">→</b></a>
-            <a class="home-pathway" href="general-counselling.html#relationships"><span>03</span><h3>Relationships &amp; change</h3><p>Boundaries, conflict, loss, transitions or a way forward.</p><b aria-hidden="true">→</b></a>
-            <a class="home-pathway" href="ndis-support.html"><span>04</span><h3>Disability-related support</h3><p>Support around wellbeing, routines and goals.</p><b aria-hidden="true">→</b></a>
+            <a class="home-pathway" href="general-counselling.html"><span class="pathway-index">01</span><h3>Emotional wellbeing</h3><p>Anxiety, low mood, grief, stress or feeling stuck.</p><span class="home-pathway-more">Anxiety · Overthinking · Grief</span><b aria-hidden="true">→</b></a>
+            <a class="home-pathway" href="aod-counselling.html"><span class="pathway-index">02</span><h3>Alcohol &amp; other drugs</h3><p>Your use, changing habits, or the impact on someone you care about.</p><span class="home-pathway-more">Changing habits · Individual support · Family support</span><b aria-hidden="true">→</b></a>
+            <a class="home-pathway" href="general-counselling.html#relationships"><span class="pathway-index">03</span><h3>Relationships &amp; change</h3><p>Boundaries, conflict, loss, transitions or a way forward.</p><span class="home-pathway-more">Boundaries · Grief · Life transitions</span><b aria-hidden="true">→</b></a>
+            <a class="home-pathway" href="ndis-support.html"><span class="pathway-index">04</span><h3>Disability-related support</h3><p>Support around wellbeing, routines and goals.</p><span class="home-pathway-more">Routines · Emotional wellbeing · Personal goals</span><b aria-hidden="true">→</b></a>
           </div>
         </div>
       </section>
@@ -141,7 +146,7 @@
           <p class="eyebrow">The Clarvia approach</p>
           <h2 id="approach-title">Pause. Understand. Grow.</h2>
           <p>Slow down, explore patterns with curiosity, and take practical steps that fit your life.</p>
-          <div class="home-approach-words" aria-hidden="true"><span>01 · Pause</span><span>02 · Understand</span><span>03 · Grow</span></div>
+          <div class="home-approach-words" aria-label="The three stages of the Clarvia approach"><span data-approach-step>01 · Pause</span><span data-approach-step>02 · Understand</span><span data-approach-step>03 · Grow</span></div>
         </div>
       </section>
 
@@ -199,7 +204,22 @@
       </section>
     </main>
 
-    <a class="home-mobile-cta" href="https://calendly.com/shreegaur/30min" target="_blank" rel="noopener noreferrer">Book Free Intro Call</a>
+    <button class="home-mobile-cta" type="button" data-open-availability>Book Free Intro Call</button>
+
+    <dialog class="availability-dialog" data-availability-dialog aria-labelledby="availability-title" aria-describedby="availability-copy">
+      <div class="availability-dialog-inner">
+        <button class="availability-close" type="button" data-close-availability aria-label="Close live availability">×</button>
+        <div class="availability-intro">
+          <p class="eyebrow">Live Calendly availability</p>
+          <h2 id="availability-title">Choose a time that feels comfortable.</h2>
+          <p id="availability-copy">Available appointments are loaded directly from Clarvia's Calendly schedule.</p>
+        </div>
+        <div class="calendly-availability" data-calendly-host data-calendly-url="https://calendly.com/shreegaur/30min?hide_event_type_details=1" aria-live="polite">
+          <div class="availability-loading" data-availability-status><span aria-hidden="true"></span>Loading live times…</div>
+        </div>
+        <p class="availability-fallback">Having trouble viewing the calendar? <a href="https://calendly.com/shreegaur/30min" target="_blank" rel="noopener noreferrer">Open Calendly in a new tab</a>.</p>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="container footer-grid">
