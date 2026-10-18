@@ -559,8 +559,22 @@ p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
 .home-portrait-wrap { position: relative; max-width: 500px; }
 .home-portrait-wrap img { width: 100%; height: auto; aspect-ratio: 0.88; border-radius: 240px 240px 22px 22px; box-shadow: var(--shadow); object-fit: cover; object-position: center 28%; }
 
+.home-portrait-wrap::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: 240px 240px 22px 22px;
+  background: linear-gradient(108deg, transparent 32%, rgba(255, 246, 219, 0.08) 42%, rgba(255, 244, 207, 0.46) 50%, rgba(255, 255, 255, 0.1) 58%, transparent 68%);
+  background-position: 145% 0;
+  background-size: 260% 100%;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+}
+
 .home-portrait-wrap > span {
   position: absolute;
+  z-index: 2;
   right: -34px;
   bottom: 34px;
   max-width: 210px;
@@ -743,10 +757,11 @@ p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
   .home-process-list li:last-child { border-bottom: 0; }
   .home-process-list li:not(:last-child)::after {
     top: auto;
-    right: 4px;
+    right: auto;
     bottom: -17px;
+    left: 50%;
     content: "↓";
-    transform: none;
+    transform: translateX(-50%);
   }
   .home-process-list h3 { margin: 9px 0 6px; font-size: 1.4rem; }
   .home-process-list p { font-size: 0.88rem; line-height: 1.5; }
@@ -810,6 +825,7 @@ p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
 .motion-enabled .home-hero-image img { animation: hero-image-settle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .motion-enabled .home-hero-image::before { animation: hero-ambient-light 10s 1.4s ease-in-out infinite alternate; }
 .motion-enabled .home-hero-image::after { animation: hero-light-wash 1.55s 160ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.motion-enabled .home-portrait-wrap::before { animation: portrait-light-sweep 7.2s 1.2s ease-in-out infinite; }
 
 .motion-enabled .home-hero-copy > * {
   opacity: 0;
@@ -841,6 +857,13 @@ p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
 @keyframes hero-ambient-light {
   0% { opacity: 0.14; transform: translate3d(-5%, 1%, 0) scale(0.96); }
   100% { opacity: 0.3; transform: translate3d(8%, -2%, 0) scale(1.06); }
+}
+
+@keyframes portrait-light-sweep {
+  0%, 58% { background-position: 145% 0; opacity: 0; }
+  65% { opacity: 0.52; }
+  82% { background-position: -45% 0; opacity: 0.22; }
+  88%, 100% { background-position: -45% 0; opacity: 0; }
 }
 
 .motion-enabled .home-process-list li > span {
@@ -1071,12 +1094,22 @@ body.availability-open { overflow: hidden; }
   .availability-intro h2 { font-size: 2rem; }
   .calendly-availability { min-height: 620px; border-radius: 14px; }
   .home-mobile-cta { border: 0; cursor: pointer; }
-  .motion-enabled .home-process-list li:not(:last-child)::after { animation-name: process-arrow-vertical; }
+  .motion-enabled .home-process-list li:not(:last-child)::after {
+    animation-name: process-arrow-flow;
+    animation-duration: 6s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .motion-enabled .home-process-list li:nth-child(2)::after { animation-delay: 3s; }
 }
 
-@keyframes process-arrow-vertical {
-  0%, 100% { box-shadow: 0 7px 20px rgba(43, 55, 46, 0.08); transform: translateY(-2px); }
-  50% { box-shadow: 0 9px 24px rgba(43, 55, 46, 0.14); transform: translateY(3px); }
+@keyframes process-arrow-flow {
+  0% { box-shadow: 0 5px 14px rgba(43, 55, 46, 0.04); opacity: 0; transform: translate(-50%, -14px) scale(0.86); }
+  8% { opacity: 1; }
+  18% { box-shadow: 0 9px 24px rgba(43, 55, 46, 0.16); opacity: 1; transform: translate(-50%, 0) scale(1); }
+  30% { opacity: 0.92; transform: translate(-50%, 5px) scale(1); }
+  40%, 100% { box-shadow: 0 5px 14px rgba(43, 55, 46, 0.03); opacity: 0; transform: translate(-50%, 16px) scale(0.9); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1084,6 +1117,7 @@ body.availability-open { overflow: hidden; }
   .motion-enabled .home-hero-image img,
   .motion-enabled .home-hero-image::before,
   .motion-enabled .home-hero-image::after,
+  .motion-enabled .home-portrait-wrap::before,
   .motion-enabled .availability-pulse::after,
   .motion-enabled .home-process-list li > span,
   .motion-enabled .home-process-list li:not(:last-child)::after,
