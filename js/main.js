@@ -35,6 +35,17 @@ window.addEventListener("resize", () => {
 const homePage = document.querySelector(".home-page");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+if (!homePage && !document.querySelector(".site-mobile-cta")) {
+  const mobileBookingLink = document.createElement("a");
+  mobileBookingLink.className = "site-mobile-cta";
+  mobileBookingLink.href = "https://calendly.com/shreegaur/30min";
+  mobileBookingLink.target = "_blank";
+  mobileBookingLink.rel = "noopener noreferrer";
+  mobileBookingLink.textContent = "Book Free Intro Call";
+  mobileBookingLink.setAttribute("aria-label", "Book a free introductory call with Clarvia Wellness");
+  document.body.append(mobileBookingLink);
+}
+
 if (homePage && !reduceMotion.matches) {
   homePage.classList.add("motion-enabled");
 }
