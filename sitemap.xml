@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://clarviawellness.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://clarviawellness.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://clarviawellness.com/general-counselling.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://clarviawellness.com/aod-counselling.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://clarviawellness.com/ndis-support.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://clarviawellness.com/mindfulness.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://clarviawellness.com/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://clarviawellness.com/referrals.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://clarviawellness.com/book.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://clarviawellness.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://clarviawellness.com/booking-policy.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://clarviawellness.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://clarviawellness.com/accessibility.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

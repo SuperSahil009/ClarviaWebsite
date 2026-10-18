@@ -1,27 +1,41 @@
 # Clarvia Wellness
 
-A lightweight static website for [clarviawellness.com](https://clarviawellness.com), built with plain HTML, CSS, and JavaScript.
+A responsive static website for [clarviawellness.com](https://clarviawellness.com), built with plain HTML, CSS and JavaScript.
 
-## Project structure
+## Pages
 
-- `index.html` — page content and metadata
-- `css/styles.css` — colors, layout, and responsive styling
-- `js/main.js` — mobile navigation, header state, reveal effects, and footer year
-- `assets/` — website images and icons
-- `robots.txt` and `sitemap.xml` — search-engine files
+- `index.html` — eight-section homepage
+- `general-counselling.html` — general counselling and emotional wellbeing
+- `aod-counselling.html` — alcohol and other drug counselling and family support
+- `ndis-support.html` — disability and NDIS-related support enquiries
+- `mindfulness.html` — optional mindfulness and wellbeing practices
+- `about.html` — practitioner story and professional background
+- `referrals.html` — direct and professional referral pathways
+- `book.html` — fees and verified booking destinations
+- `privacy.html`, `booking-policy.html`, `terms.html`, `accessibility.html` — service information pages
+- `QA-CHECKLIST.md` — automated results and owner checks required before launch
 
 ## Preview locally
 
-You can open `index.html` directly, or serve the folder with any static web server. For example:
+From this folder, run:
 
 ```powershell
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://localhost:8080/` in a browser. Review at desktop width and at a narrow mobile width. No build step or dependency installation is required.
 
-## Deploy to Hostinger
+## Owner review
 
-Connect this repository in Hostinger under **Websites → Dashboard → Advanced → Git**. Deploy the `main` branch to `public_html` and enable automatic deployment when ready.
+1. Open the homepage and use every item in the desktop and mobile navigation.
+2. Review all professional titles, qualifications, experience statements and service descriptions.
+3. Review the legal/privacy drafts and every item marked unresolved in `QA-CHECKLIST.md`.
+4. Test booking, confirmation, reminder, payment and form workflows using test details.
+5. Request any copy or design changes on the development branch.
+6. Approve merging to `main` only after the unresolved launch checks are complete.
 
-The root of `public_html` should contain `index.html`, not an extra nested project folder.
+## Deployment
+
+Production currently deploys from `main` through Hostinger. Do not merge the redesign branch into `main` until owner approval and launch QA are complete.
+
+In Hostinger, the deployment route is **Websites → Dashboard → Advanced → Git**. The deployment root should contain `index.html` directly (normally `public_html`, without an extra nested project folder).
