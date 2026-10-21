@@ -205,3 +205,67 @@ window.addEventListener("message", (event) => {
     if (heading) heading.textContent = "Your introductory call is booked.";
   }
 });
+
+
+/* Approved Clarvia visual storytelling interactions */
+(() => {
+  const data = [
+    ["Stress, anxiety & feeling overwhelmed","Explore emotional patterns, grounding, mindfulness and practical coping skills that fit your everyday life.","general-counselling.html","Explore General Counselling"],
+    ["Life transitions, loneliness & uncertainty","Make room for adjustment, self-understanding, relationships and finding your footing through change.","general-counselling.html","Explore General Counselling"],
+    ["Alcohol or other drug concerns","Explore triggers, motivation, harm reduction, substance-use patterns and recovery-oriented support without judgement.","aod-counselling.html","Explore AOD Counselling"],
+    ["Worried about someone you love","Explore family support, healthier boundaries, communication and ways to navigate suitable services.","aod-counselling.html#family-support","Explore Family Support"],
+    ["Disability & everyday wellbeing support","Discuss individual wellbeing goals, adapted coping skills and support options. Service and funding suitability must be verified.","ndis-support.html","Explore Disability Support"],
+    ["Emotional regulation & coping tools","Explore optional grounding, mindfulness, breathing exercises and practical everyday regulation strategies.","general-counselling.html","Explore Practical Support"],
+    ["I don't know where to begin","Talk through what's concerning you, understand possible services and identify a realistic next step. Especially helpful when navigating AOD and family concerns.","referrals.html","Explore Support Navigation"]
+  ];
+  const tabs = Array.from(document.querySelectorAll("[data-cw-choice]"));
+  const panel = document.querySelector("#cw-support-panel");
+  const updatePanel = (n, focus) => {
+    if (!panel || !tabs[n]) return;
+    tabs.forEach((tab,i)=>{tab.setAttribute("aria-selected",String(i===n));tab.tabIndex=i===n?0:-1});
+    panel.setAttribute("aria-labelledby",tabs[n].id);
+    panel.querySelector("[data-cw-panel-title]").textContent=data[n][0];
+    panel.querySelector("[data-cw-panel-copy]").textContent=data[n][1];
+    const link=panel.querySelector("[data-cw-panel-link]");
+    link.href=data[n][2];link.textContent=data[n][3]+" →";
+    if(focus)tabs[n].focus();
+  };
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener("click",()=>updatePanel(i,false));
+    tab.addEventListener("keydown",e=>{
+      if(!["ArrowDown","ArrowUp","ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
+      e.preventDefault();
+      const n=e.key==="Home"?0:e.key==="End"?tabs.length-1:(i+((e.key==="ArrowDown"||e.key==="ArrowRight")?1:-1)+tabs.length)%tabs.length;
+      updatePanel(n,true);
+    });
+  });
+  const root=document.querySelector("[data-cw-slideshow]");
+  if(!root)return;
+  const slides=[...root.querySelectorAll("[data-cw-slide]")];
+  const dots=[...root.querySelectorAll("[data-cw-dot]")];
+  const counter=root.querySelector("[data-cw-slide-count]");
+  const slideName=root.querySelector("[data-cw-slide-name]");
+  const toggle=root.querySelector("[data-cw-toggle]");
+  const names=["A calming space","Online counselling","Alcohol awareness","Space to reflect on substance use","Disability and everyday goals","Mindfulness and grounding"];
+  const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+  let index=0,paused=prefersReduced.matches,timer=null;
+  const show=n=>{
+    index=(n+slides.length)%slides.length;
+    slides.forEach((el,i)=>el.classList.toggle("is-current",i===index));
+    dots.forEach((el,i)=>el.setAttribute("aria-current",String(i===index)));
+    if(counter)counter.textContent=String(index+1).padStart(2,"0")+" / "+String(slides.length).padStart(2,"0");
+    if(slideName)slideName.textContent=names[index];
+  };
+  const stop=()=>{if(timer)window.clearInterval(timer);timer=null};
+  const start=()=>{stop();if(!paused&&!document.hidden)timer=window.setInterval(()=>show(index+1),7500)};
+  const setPaused=value=>{
+    paused=value;
+    if(toggle){toggle.textContent=paused?"Play":"Pause";toggle.setAttribute("aria-label",paused?"Play background slideshow":"Pause background slideshow")}
+    start();
+  };
+  dots.forEach((dot,i)=>dot.addEventListener("click",()=>{show(i);start()}));
+  toggle?.addEventListener("click",()=>setPaused(!paused));
+  document.addEventListener("visibilitychange",()=>{if(document.hidden)stop();else start()});
+  prefersReduced.addEventListener?.("change",e=>setPaused(e.matches));
+  show(0);setPaused(paused);
+})();
