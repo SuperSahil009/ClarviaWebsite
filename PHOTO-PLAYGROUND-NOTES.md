@@ -32,3 +32,24 @@ The homepage's former five-layer "Healing happens in layers" panel is now redesi
 The six clickable, native-`details` explanations cover family/generational patterns, environment and upbringing, relational/attachment experiences, emotional experiences, thoughts/beliefs, and body/stress responses. Each item explains a possible influence and a suitable coping or self-understanding direction. This is a **conceptual educational model**, not six scientifically established trauma stages, nor a promise of specialist trauma treatment. No mandatory order is implied.
 
 New CSS lives in `css/clarvia-photo-playground.css`. The three actual photograph assets are in `clarvia-final-review-photo-assets.zip` supplied in the ChatGPT conversation; the ZIP must be extracted and checked into this branch for a real-photo browser preview. Do **not** merge or deploy `main` until these images are installed and the owner approves desktop/mobile appearance.
+
+## Founder photo storytelling enhancement — 21 November
+
+Homepage **Meet Your Guide** now uses a prominent professional portrait with a smaller **face-visible genuine mindfulness photo** inset (replacing the duplicate use of one portrait). The homepage copy is intentionally shorter, with a single Read My Story link.
+
+The **Read My Story** (`about.html`) page now has a visual graduation collage, short emotionally engaging headlines, a four-part story journey, and accessible native expandable chapters. It finishes with a photographic Why Clarvia Exists section and a concise, accurate credentials panel.
+
+### Exact photo paths needed on this branch
+
+The attached `clarvia-founder-photo-assets.zip` preserves repository paths under `assets/images/clarvia-personal/`:
+- `pool-sunset-meditation.webp` — homepage slideshow and trauma/healing concept
+- `beach-reflection.webp` — homepage slideshow
+- `shala-wide-meditation.webp` — final homepage banner and About-page why-Clarvia photograph
+- `shree-mindfulness-by-water.webp` — face-visible meditation inset and About chapter
+- `shree-graduation-flowers.webp` — About-page opening and chapter
+- `shree-graduation-university.webp` — About-page opening and chapter
+- `shree-lakeside-reflection.webp` — About-page life-transition chapter
+
+The code references these authentic photographs directly. The binary photos are **not yet in GitHub**; until someone adds the zip contents to this branch, fallback imagery appears. The standalone local preview supplied with the conversation can display the original photographs.
+
+Keep `main` unmodified until review and explicit approval.
