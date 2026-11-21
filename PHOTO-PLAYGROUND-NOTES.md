@@ -1,3 +1,5 @@
+> **PHOTO ASSET STATUS — COMPLETE (21 November 2026):** All seven original WebP photographs were uploaded to `main` under `assets/images/clarvia-personal/` in commit `f04cd68eb9e9843c7d86ab46907b277385f9b95e`. File names, byte sizes and hashes have been verified. Older instructions below referring to missing files or manual ZIP extraction are historical and no longer apply.
+
 # Clarvia personal-photo experiment (review branch only)
 
 This branch experiments with the **approved** use of original personal photographs and a warmer, photography-led palette. It is NOT approved for production merge.
