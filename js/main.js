@@ -269,3 +269,13 @@ window.addEventListener("message", (event) => {
   prefersReduced.addEventListener?.("change",e=>setPaused(e.matches));
   show(0);setPaused(paused);
 })();
+
+/* Gracefully retain existing imagery until owner-approved photos are added. */
+document.querySelectorAll("img[data-cw-fallback]").forEach((img) => {
+  img.addEventListener("error", () => {
+    const fallback = img.dataset.cwFallback;
+    if (!fallback || img.src.endsWith(fallback)) return;
+    img.src = fallback;
+  }, { once: true });
+  if (img.complete && img.naturalWidth === 0 && img.dataset.cwFallback) img.src = img.dataset.cwFallback;
+});

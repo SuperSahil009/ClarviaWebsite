@@ -1,0 +1,130 @@
+/* Experimental Clarvia photo palette / layout. Never merge without owner review. */
+:root{
+  --cw-cream:#f8f5ec;
+  --cw-paper:#fffdf6;
+  --cw-sage:#9caf88;
+  --cw-olive:#5e6f52;
+  --cw-ink:#333b34;
+  --cw-blue:#7fa4b2;
+  --cw-sand:#e8d9c3;
+  --cw-sunrise:#e8a86b;
+}
+.cw-hero{background:#3e4f44}
+.cw-hero .cw-slides:after{background:linear-gradient(90deg,rgba(20,31,27,.81) 0%,rgba(27,41,36,.62) 45%,rgba(30,42,38,.11) 100%),linear-gradient(0deg,rgba(13,23,22,.25),transparent 50%)}
+.cw-about{background:#f8f5ec}
+.cw-carry{background:linear-gradient(125deg,#f8f5ec 3%,#e8ebdf 52%,#ebefee 100%)}
+.cw-layers{background:linear-gradient(145deg,#fffaf0,#efe8d9 67%,#e8eee7)}
+.cw-layer-photo{background:#d8d6c9;box-shadow:0 25px 50px #566b5830;outline:10px solid #fff8eb;outline-offset:-10px}
+.cw-layer-photo img{object-position:50% 56%;filter:saturate(.94) contrast(1.04)}
+.cw-layer-card{border-color:#d7d5c9}
+.cw-services{background:#e9eee6}
+.cw-services .cw-service-photo:after{background:linear-gradient(transparent,rgba(35,48,37,.24))}
+.cw-personal-finale{position:relative;isolation:isolate;overflow:hidden;background:#405243;min-height:520px;display:flex;align-items:center}
+.cw-personal-finale .cw-finale-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 56%;z-index:-2}
+.cw-personal-finale .cw-finale-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(25,35,29,.86) 0%,rgba(27,36,29,.72) 32%,rgba(40,47,38,.08) 79%),linear-gradient(0deg,#2234283a,transparent 55%)}
+.cw-personal-finale .container{position:relative;padding-block:90px;width:100%;max-width:1200px}
+.cw-personal-finale .container.narrow{max-width:1200px}
+.cw-personal-finale .container>p,.cw-personal-finale h2{color:#fff!important;max-width:610px}
+.cw-personal-finale h2{font-size:clamp(3rem,5.5vw,5.8rem);line-height:1.08;text-wrap:balance;text-align:left}
+.cw-personal-finale .eyebrow,.cw-personal-finale p{text-align:left}
+.cw-personal-finale .actions{justify-content:flex-start}
+.cw-personal-finale .button-light{background:#eff0df;color:#344538;border-color:#eff0df}
+.cw-personal-finale .button-secondary{color:#fff;border-color:#fff}
+@media(max-width:700px){
+ .cw-personal-finale{min-height:580px}
+ .cw-personal-finale .cw-finale-photo{object-position:49% center}
+ .cw-personal-finale .cw-finale-scrim{background:linear-gradient(90deg,rgba(22,31,27,.78),rgba(30,40,35,.37)),linear-gradient(0deg,#26392aa3,transparent 65%)}
+ .cw-personal-finale h2{font-size:clamp(2.7rem,10vw,4.2rem)}
+ .cw-personal-finale .container{padding-block:75px}
+}
+
+
+/* Real-photo trauma layers: overlapping conceptual influences, not ordered treatment stages. */
+.cw-trauma-layers{background:linear-gradient(125deg,#f9f6ec 0%,#f4eadc 45%,#e9eee5 100%);overflow:hidden}
+.cw-trauma-heading{max-width:1020px;text-align:center;margin-bottom:46px}
+.cw-trauma-heading .cw-lede{margin-left:auto;margin-right:auto;max-width:850px}
+.cw-trauma-heading h2{font-size:clamp(2.5rem,4.8vw,5rem);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.cw-trauma-heading h2 em{display:block;color:#637654;font-weight:400}
+.cw-trauma-grid{display:grid;grid-template-columns: minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(32px,5vw,84px);align-items:start}
+.cw-trauma-figure{margin:0;min-width:0}
+.cw-trauma-visual{position:relative;border-radius:240px 240px 16px 16px;overflow:hidden;isolation:isolate;aspect-ratio: .84;background:#bdcabc;box-shadow:0 18px 45px rgba(35,53,38,.14)}
+.cw-trauma-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(29,39,32,.06) 15%,transparent 65%,rgba(29,39,32,.35));z-index:2}
+.cw-trauma-visual>img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cw-trauma-rings{position:absolute;z-index:1;inset:0;width:100%;height:100%;mix-blend-mode:screen;pointer-events:none;opacity:.77}
+.cw-trauma-photo-tag{position:absolute;z-index:3;left:22px;bottom:18px;color:#fff;font-size:.76rem;letter-spacing:.06em;text-shadow:0 1px 5px #27372d}
+.cw-trauma-figure figcaption{font-size:.84rem;line-height:1.55;color:#647061;margin-top:17px}
+.cw-trauma-content h3{font-size:clamp(2rem,3vw,3rem);line-height:1.15;margin-bottom:15px}
+.cw-trauma-summary{color:#5c6b5f;line-height:1.7;margin-bottom:24px}
+.cw-trauma-controls{display:grid;gap:9px}
+.cw-trauma-item{background:rgba(255,252,243,.85);border:1px solid #dcdccf;border-radius:13px;transition:background .2s,border-color .2s;overflow:hidden}
+.cw-trauma-item[open]{background:#fffdf7;border-color:#b3c2a9;box-shadow:0 8px 22px rgba(78,98,75,.07)}
+.cw-trauma-item summary{cursor:pointer;list-style:none;display:flex;gap:15px;align-items:center;padding:17px 18px;color:#394b3b;font-weight:650;font-size:.95rem}
+.cw-trauma-item summary::-webkit-details-marker{display:none}
+.cw-trauma-item summary:focus-visible{outline:3px solid #667d68;outline-offset:-3px}
+.cw-trauma-number{color:#849580;font-size:.8rem;font-weight:700;letter-spacing:.1em}
+.cw-trauma-plus{margin-left:auto;position:relative;width:15px;height:15px;flex-shrink:0}
+.cw-trauma-plus::before,.cw-trauma-plus::after{content:"";position:absolute;background:#687f68;border-radius:2px}
+.cw-trauma-plus::before{width:13px;height:2px;top:7px;left:1px}
+.cw-trauma-plus::after{height:13px;width:2px;left:7px;top:1px}
+.cw-trauma-item[open] .cw-trauma-plus::after{display:none}
+.cw-trauma-explainer{padding:0 22px 20px 52px;color:#526255;line-height:1.6;font-size:.91rem}
+.cw-trauma-explainer p{margin:0 0 11px}
+.cw-trauma-explainer p:last-child{margin-bottom:0}
+.cw-trauma-note{margin-top:22px;padding:15px 18px;border-left:3px solid #a3b89e;background:rgba(226,234,220,.6);font-size:.85rem;line-height:1.6;color:#566957}
+@media(max-width:900px){.cw-trauma-grid{grid-template-columns:1fr}.cw-trauma-visual{max-height:650px;aspect-ratio:1.1;border-radius:170px 170px 16px 16px}.cw-trauma-content{max-width:850px}.cw-trauma-heading{margin-bottom:30px}}
+@media(max-width:600px){.cw-trauma-visual{aspect-ratio:.88;border-radius:130px 130px 14px 14px}.cw-trauma-rings{opacity:.62}.cw-trauma-explainer{padding-left:18px}.cw-trauma-heading h2{font-size:clamp(2.5rem,11vw,4rem)}.cw-trauma-item summary{padding:15px}}
+@media(prefers-reduced-motion:reduce){.cw-trauma-item{transition:none}}
+
+
+/* Photo-led founder journey: homepage double portrait + dedicated About storytelling. */
+.cw-about-photo-story{position:relative}
+.cw-about-photo-story .cw-main-portrait{width:76%;object-position:center 22%}
+.cw-about-photo-story .cw-mindful-portrait{width:47%;height:245px;object-fit:cover;object-position:center 47%;border-radius:18px;right:0;bottom:11px;border:8px solid #faf7ef;box-shadow:0 18px 45px rgba(40,50,40,.18)}
+.cw-portrait-note{position:absolute;bottom:-25px;left:5px;font-size:.77rem;letter-spacing:.05em;color:#64735f}
+.cw-about-text .cw-about-lead{font-family:"EB Garamond",Georgia,serif;font-size:clamp(1.37rem,2vw,1.7rem);color:#3b4a3f;line-height:1.4}
+.cw-about-hero{padding:clamp(74px,8vw,115px) 0;background:linear-gradient(135deg,#f7f3e9 0%,#f6eedf 65%,#e8ede7 100%);overflow:hidden}
+.cw-about-hero-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);align-items:center;gap:clamp(28px,5vw,78px)}
+.cw-about-hero h1{font-size:clamp(3.4rem,6.5vw,6.8rem);line-height:1.04;letter-spacing:-.025em;text-wrap:balance;color:#354537}
+.cw-about-hero-lead{max-width:530px;color:#546559;font-size:clamp(1.1rem,1.5vw,1.33rem);line-height:1.7}
+.cw-about-hero-anchors{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.cw-about-hero-anchors a{display:inline-flex;gap:14px;align-items:center;padding:12px 17px;border:1px solid #a7b4a4;border-radius:999px;background:#fffcf2;color:#3c5544;font-size:.86rem;font-weight:600;text-decoration:none;transition:background .18s}
+.cw-about-hero-anchors a:hover{background:#dce7d7}
+.cw-about-hero-gallery{height:550px;position:relative;display:flex;align-items:center}
+.cw-about-grad-main{height:495px;width:70%;object-fit:cover;object-position:center top;border-radius:165px 165px 17px 17px;box-shadow:0 23px 55px #31493224}
+.cw-about-grad-detail{position:absolute;bottom:14px;right:0;width:47%;height:290px;object-fit:cover;object-position:center top;border:9px solid #f8f3e9;border-radius:17px;box-shadow:0 16px 37px #31493230;transform:rotate(2deg)}
+.cw-about-photo-caption{position:absolute;bottom:-16px;left:6px;color:#677665;font-size:.82rem;letter-spacing:.04em}
+.cw-about-journey{background:#fffcf6}
+.cw-about-section-heading{max-width:800px;margin-bottom:38px}
+.cw-about-section-heading h2{font-size:clamp(2.5rem,4.7vw,4.8rem);line-height:1.1}
+.cw-about-section-heading h2 em{color:#64775a}
+.cw-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.cw-story-card{background:#f8f5ed;border:1px solid #e2e4dc;border-radius:17px;overflow:hidden;display:flex;flex-direction:column}
+.cw-story-card>img{display:block;width:100%;aspect-ratio:1.45;object-fit:cover;object-position:center 46%;background:#cbd6ca}
+.cw-story-card>div{padding:clamp(22px,2.5vw,31px);display:flex;flex-direction:column;flex:1}
+.cw-story-card h3{font-size:clamp(1.8rem,2.4vw,2.5rem);line-height:1.14;margin:2px 0 12px}
+.cw-story-card p{color:#526256;line-height:1.6}
+.cw-story-card .cw-label{font-size:.7rem;color:#7b8a6d}
+.cw-story-card details{margin-top:auto;border-top:1px solid #d9dfd5;padding-top:16px}
+.cw-story-card summary{cursor:pointer;font-size:.9rem;color:#455f4a;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:15px}
+.cw-story-card summary::after{content:"+";font-size:1.3rem;font-weight:500;line-height:.9}
+.cw-story-card details[open] summary::after{content:"−"}
+.cw-story-card summary:focus-visible{outline:3px solid #6c8368;outline-offset:5px}
+.cw-story-card details p{margin:15px 0 0;font-size:.91rem}
+.cw-story-mindfulness>img{object-position:center 63%}
+.cw-story-graduation>img{object-position:center 15%}
+.cw-about-why{background:linear-gradient(135deg,#e8ece3,#f1e9dc)}
+.cw-about-why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,75px);align-items:center}
+.cw-about-why-photo{height:500px;border-radius:18px 180px 18px 18px;overflow:hidden;box-shadow:0 16px 45px #354c3a24}
+.cw-about-why-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cw-about-why-text h2{font-size:clamp(2.5rem,4.4vw,4.5rem)}
+.cw-about-why-text blockquote{margin:27px 0;padding:11px 0 11px 23px;border-left:3px solid #81947a;color:#475943;font:italic 1.7rem/1.3 "EB Garamond",Georgia,serif}
+.cw-about-why-text p{color:#526356;line-height:1.7}
+.cw-about-credentials{background:#f8f6ef}
+.cw-about-credentials-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,100px)}
+.cw-about-credentials h2{font-size:clamp(2.4rem,4vw,4rem)}
+.cw-about-cred-panel{padding:clamp(24px,4vw,45px);border-radius:18px;background:#e7ece4}
+.cw-about-cred-panel ul{padding-left:21px;color:#3f5544;line-height:1.9}
+.cw-about-cred-panel p{font-size:.84rem;line-height:1.65;color:#4f5e54;padding-top:15px;border-top:1px solid #cbd8c9}
+@media(max-width:900px){.cw-about-hero-grid,.cw-about-why-grid,.cw-about-credentials-grid{grid-template-columns:1fr}.cw-about-hero-gallery{height:490px;max-width:670px}.cw-about-grad-main{height:440px}.cw-about-grad-detail{height:245px}.cw-about-why-photo{height:410px}}
+@media(max-width:600px){.cw-about-photo-story .cw-mindful-portrait{height:180px}.cw-portrait-note{bottom:-35px}.cw-about-hero{padding-block:55px 72px}.cw-about-hero h1{font-size:clamp(3rem,11vw,4.7rem)}.cw-about-hero-gallery{height:380px;margin-bottom:22px}.cw-about-grad-main{height:360px;width:73%}.cw-about-grad-detail{height:205px;width:46%;border-width:5px}.cw-story-grid{grid-template-columns:1fr}.cw-story-card>img{aspect-ratio:1.35}.cw-about-why-photo{height:330px}}
+@media(prefers-reduced-motion:reduce){.cw-about-hero-anchors a{transition:none}}
