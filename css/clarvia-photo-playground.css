@@ -37,3 +37,40 @@
  .cw-personal-finale h2{font-size:clamp(2.7rem,10vw,4.2rem)}
  .cw-personal-finale .container{padding-block:75px}
 }
+
+
+/* Real-photo trauma layers: overlapping conceptual influences, not ordered treatment stages. */
+.cw-trauma-layers{background:linear-gradient(125deg,#f9f6ec 0%,#f4eadc 45%,#e9eee5 100%);overflow:hidden}
+.cw-trauma-heading{max-width:1020px;text-align:center;margin-bottom:46px}
+.cw-trauma-heading .cw-lede{margin-left:auto;margin-right:auto;max-width:850px}
+.cw-trauma-heading h2{font-size:clamp(2.5rem,4.8vw,5rem);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.cw-trauma-heading h2 em{display:block;color:#637654;font-weight:400}
+.cw-trauma-grid{display:grid;grid-template-columns: minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(32px,5vw,84px);align-items:start}
+.cw-trauma-figure{margin:0;min-width:0}
+.cw-trauma-visual{position:relative;border-radius:240px 240px 16px 16px;overflow:hidden;isolation:isolate;aspect-ratio: .84;background:#bdcabc;box-shadow:0 18px 45px rgba(35,53,38,.14)}
+.cw-trauma-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(29,39,32,.06) 15%,transparent 65%,rgba(29,39,32,.35));z-index:2}
+.cw-trauma-visual>img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cw-trauma-rings{position:absolute;z-index:1;inset:0;width:100%;height:100%;mix-blend-mode:screen;pointer-events:none;opacity:.77}
+.cw-trauma-photo-tag{position:absolute;z-index:3;left:22px;bottom:18px;color:#fff;font-size:.76rem;letter-spacing:.06em;text-shadow:0 1px 5px #27372d}
+.cw-trauma-figure figcaption{font-size:.84rem;line-height:1.55;color:#647061;margin-top:17px}
+.cw-trauma-content h3{font-size:clamp(2rem,3vw,3rem);line-height:1.15;margin-bottom:15px}
+.cw-trauma-summary{color:#5c6b5f;line-height:1.7;margin-bottom:24px}
+.cw-trauma-controls{display:grid;gap:9px}
+.cw-trauma-item{background:rgba(255,252,243,.85);border:1px solid #dcdccf;border-radius:13px;transition:background .2s,border-color .2s;overflow:hidden}
+.cw-trauma-item[open]{background:#fffdf7;border-color:#b3c2a9;box-shadow:0 8px 22px rgba(78,98,75,.07)}
+.cw-trauma-item summary{cursor:pointer;list-style:none;display:flex;gap:15px;align-items:center;padding:17px 18px;color:#394b3b;font-weight:650;font-size:.95rem}
+.cw-trauma-item summary::-webkit-details-marker{display:none}
+.cw-trauma-item summary:focus-visible{outline:3px solid #667d68;outline-offset:-3px}
+.cw-trauma-number{color:#849580;font-size:.8rem;font-weight:700;letter-spacing:.1em}
+.cw-trauma-plus{margin-left:auto;position:relative;width:15px;height:15px;flex-shrink:0}
+.cw-trauma-plus::before,.cw-trauma-plus::after{content:"";position:absolute;background:#687f68;border-radius:2px}
+.cw-trauma-plus::before{width:13px;height:2px;top:7px;left:1px}
+.cw-trauma-plus::after{height:13px;width:2px;left:7px;top:1px}
+.cw-trauma-item[open] .cw-trauma-plus::after{display:none}
+.cw-trauma-explainer{padding:0 22px 20px 52px;color:#526255;line-height:1.6;font-size:.91rem}
+.cw-trauma-explainer p{margin:0 0 11px}
+.cw-trauma-explainer p:last-child{margin-bottom:0}
+.cw-trauma-note{margin-top:22px;padding:15px 18px;border-left:3px solid #a3b89e;background:rgba(226,234,220,.6);font-size:.85rem;line-height:1.6;color:#566957}
+@media(max-width:900px){.cw-trauma-grid{grid-template-columns:1fr}.cw-trauma-visual{max-height:650px;aspect-ratio:1.1;border-radius:170px 170px 16px 16px}.cw-trauma-content{max-width:850px}.cw-trauma-heading{margin-bottom:30px}}
+@media(max-width:600px){.cw-trauma-visual{aspect-ratio:.88;border-radius:130px 130px 14px 14px}.cw-trauma-rings{opacity:.62}.cw-trauma-explainer{padding-left:18px}.cw-trauma-heading h2{font-size:clamp(2.5rem,11vw,4rem)}.cw-trauma-item summary{padding:15px}}
+@media(prefers-reduced-motion:reduce){.cw-trauma-item{transition:none}}
