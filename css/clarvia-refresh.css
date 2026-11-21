@@ -15,3 +15,12 @@
 .cw-change-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.cw-change-steps article{padding:22px 17px;background:#fff;border-top:4px solid #7f9d83;border-radius:9px}.cw-change-steps h3{font-size:1.6rem}.cw-change-steps p{font-size:.86rem;color:#5a685e}.cw-plain-notice{background:#e7ece4;border-left:4px solid #718871;padding:18px 22px;border-radius:5px;font-size:.9rem;line-height:1.65}
 @media(max-width:900px){.cw-about-grid,.cw-layers-grid,.cw-carry-grid{grid-template-columns:1fr}.cw-about-images{max-width:620px;min-height:500px}.cw-layers-grid{gap:32px}.cw-layer-photo{height:460px}.cw-service-grid{grid-template-columns:repeat(2,1fr)}.cw-steps,.cw-emotion-grid{grid-template-columns:repeat(2,1fr)}.cw-change-steps{grid-template-columns:repeat(3,1fr)}.cw-journey{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.cw-hero{min-height:680px}.cw-hero-content{padding-block:110px 90px}.cw-hero h1{font-size:clamp(3rem,11vw,4.4rem)}.cw-slides:after{background:linear-gradient(90deg,rgba(21,34,26,.79),rgba(21,34,26,.4)),linear-gradient(0deg,rgba(21,34,26,.3),transparent)}.cw-about-images{min-height:390px}.cw-about-images .cw-main-portrait{height:365px}.cw-about-images .cw-small-portrait{height:165px}.cw-service-grid,.cw-steps,.cw-emotion-grid,.cw-journey,.cw-change-steps,.cw-offers{grid-template-columns:1fr}.cw-alt-row{grid-template-columns:1fr;gap:18px}.cw-alt-row:nth-child(even) .cw-alt-visual{order:0}.cw-alt-visual img{height:270px}.cw-slide-bottom{flex-wrap:wrap}.cw-page-hero .container{padding-block:70px}.cw-carry-panel{min-height:285px}}
 @media(prefers-reduced-motion:reduce){.cw-slide{transition:none!important}.cw-service-photo img{transition:none!important}.cw-carry-choice{transition:none!important}}
+
+/* Stripe checkout links — clearly distinguish service purchase from appointment scheduling */
+.cw-service-text .cw-service-price{margin:10px 0 14px;color:#38533f;font-weight:700;font-size:.92rem}
+.cw-service-checkout{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:auto}
+.cw-service-checkout .cw-action{margin-top:0}
+.cw-service-checkout .button{margin:0;min-height:40px;display:inline-flex;align-items:center;justify-content:center}
+.cw-service-text .cw-service-note{font-size:.77rem;line-height:1.55;color:#657568;margin:12px 0 0}
+.cw-checkout-notice{margin:0 auto 24px;max-width:900px}
+@media(max-width:720px){.cw-service-checkout{gap:10px}.cw-service-checkout .button{width:100%}}
