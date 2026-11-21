@@ -1,0 +1,39 @@
+/* Experimental Clarvia photo palette / layout. Never merge without owner review. */
+:root{
+  --cw-cream:#f8f5ec;
+  --cw-paper:#fffdf6;
+  --cw-sage:#9caf88;
+  --cw-olive:#5e6f52;
+  --cw-ink:#333b34;
+  --cw-blue:#7fa4b2;
+  --cw-sand:#e8d9c3;
+  --cw-sunrise:#e8a86b;
+}
+.cw-hero{background:#3e4f44}
+.cw-hero .cw-slides:after{background:linear-gradient(90deg,rgba(20,31,27,.81) 0%,rgba(27,41,36,.62) 45%,rgba(30,42,38,.11) 100%),linear-gradient(0deg,rgba(13,23,22,.25),transparent 50%)}
+.cw-about{background:#f8f5ec}
+.cw-carry{background:linear-gradient(125deg,#f8f5ec 3%,#e8ebdf 52%,#ebefee 100%)}
+.cw-layers{background:linear-gradient(145deg,#fffaf0,#efe8d9 67%,#e8eee7)}
+.cw-layer-photo{background:#d8d6c9;box-shadow:0 25px 50px #566b5830;outline:10px solid #fff8eb;outline-offset:-10px}
+.cw-layer-photo img{object-position:50% 56%;filter:saturate(.94) contrast(1.04)}
+.cw-layer-card{border-color:#d7d5c9}
+.cw-services{background:#e9eee6}
+.cw-services .cw-service-photo:after{background:linear-gradient(transparent,rgba(35,48,37,.24))}
+.cw-personal-finale{position:relative;isolation:isolate;overflow:hidden;background:#405243;min-height:520px;display:flex;align-items:center}
+.cw-personal-finale .cw-finale-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 56%;z-index:-2}
+.cw-personal-finale .cw-finale-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(25,35,29,.86) 0%,rgba(27,36,29,.72) 32%,rgba(40,47,38,.08) 79%),linear-gradient(0deg,#2234283a,transparent 55%)}
+.cw-personal-finale .container{position:relative;padding-block:90px;width:100%;max-width:1200px}
+.cw-personal-finale .container.narrow{max-width:1200px}
+.cw-personal-finale .container>p,.cw-personal-finale h2{color:#fff!important;max-width:610px}
+.cw-personal-finale h2{font-size:clamp(3rem,5.5vw,5.8rem);line-height:1.08;text-wrap:balance;text-align:left}
+.cw-personal-finale .eyebrow,.cw-personal-finale p{text-align:left}
+.cw-personal-finale .actions{justify-content:flex-start}
+.cw-personal-finale .button-light{background:#eff0df;color:#344538;border-color:#eff0df}
+.cw-personal-finale .button-secondary{color:#fff;border-color:#fff}
+@media(max-width:700px){
+ .cw-personal-finale{min-height:580px}
+ .cw-personal-finale .cw-finale-photo{object-position:49% center}
+ .cw-personal-finale .cw-finale-scrim{background:linear-gradient(90deg,rgba(22,31,27,.78),rgba(30,40,35,.37)),linear-gradient(0deg,#26392aa3,transparent 65%)}
+ .cw-personal-finale h2{font-size:clamp(2.7rem,10vw,4.2rem)}
+ .cw-personal-finale .container{padding-block:75px}
+}
