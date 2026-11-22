@@ -228,7 +228,7 @@ window.addEventListener("message", (event) => {
     },
     {
       title: "Something I use to cope is becoming a concern", eyebrow: "Alcohol or other drug concerns",
-      image: "assets/images/reset-session.jpeg", alt: "A quiet, reflective setting",
+      image: "assets/images/clarvia-service-aod.webp", alt: "Adult reflecting quietly on alcohol use at home",
       first: "Maybe alcohol or another substance has started taking up more space in your life than you want. You may feel uncertain, worried or simply curious about your patterns.",
       second: "There is room to talk openly, without judgement or pressure to have all the answers. We can look at the role substance use plays and possible next steps.",
       help: ["Understanding patterns and triggers","Motivation and behaviour change","Harm-reduction strategies","Recovery-oriented support and referrals"],
@@ -244,7 +244,7 @@ window.addEventListener("message", (event) => {
     },
     {
       title: "I want support that fits my daily life", eyebrow: "Disability & everyday wellbeing",
-      image: "assets/images/everyday-goal-planning.webp", alt: "Everyday planning in a calm environment",
+      image: "assets/images/clarvia-service-disability.webp", alt: "Wheelchair user preparing food alongside a supportive companion",
       first: "Support should reflect your own goals, routines and preferences—not a one-size-fits-all idea of what wellbeing looks like.",
       second: "We can discuss what matters to you and whether Clarvia's individual support is a suitable fit. Funding options need to be checked separately.",
       help: ["Person-centred goal exploration","Everyday coping and routines","Confidence and self-advocacy","Individual suitability and funding discussion"],
