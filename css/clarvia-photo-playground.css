@@ -238,3 +238,154 @@
 @media(prefers-reduced-motion:reduce){
  .cw-trauma-refined .cw-trauma-item{transition:none}
 }
+
+
+/* Owner review: restore previous two-column trauma layout and undimmed photo.
+   This deliberately overrides the preceding experimental layout for desktop. */
+.cw-trauma-refined{
+  background:linear-gradient(130deg,#faf8f2 0%,#f5f2eb 63%,#eff2ea 100%);
+}
+.cw-trauma-refined .cw-trauma-heading-restored{
+  max-width:1100px;
+  margin:0 auto clamp(28px,3vw,44px);
+  text-align:center;
+}
+.cw-trauma-refined .cw-trauma-heading-restored h2{
+  font-size:clamp(2.8rem,4.7vw,4.6rem);
+  font-weight:400;
+  line-height:1.12;
+  margin:0 0 12px;
+  color:#3d463c;
+  letter-spacing:-.025em;
+}
+.cw-trauma-refined .cw-trauma-heading-restored h2 em{
+  color:#778367;
+  font-style:italic;
+  font-weight:400;
+}
+.cw-trauma-refined .cw-trauma-heading-restored>p:last-child{
+  max-width:780px;
+  margin:0 auto;
+  color:#62685b;
+  font-size:1rem;
+  line-height:1.7;
+}
+.cw-trauma-refined .cw-trauma-refined-grid{
+  display:grid;
+  grid-template-columns:minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items:start;
+  column-gap:clamp(20px,3.6vw,54px);
+  max-width:1180px;
+  margin:0 auto;
+}
+.cw-trauma-refined .cw-trauma-figure,
+.cw-trauma-refined .cw-trauma-refined-content{
+  width:100%;
+  min-width:0;
+  max-width:100%;
+}
+.cw-trauma-refined .cw-trauma-visual{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 5;
+  max-height:635px;
+  min-height:0;
+  border-radius:155px 155px 17px 17px;
+  overflow:hidden;
+  background:#d9dfd6;
+  box-shadow:0 15px 35px rgba(48,55,46,.11);
+}
+.cw-trauma-refined .cw-trauma-visual>img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:50% 53%;
+  filter:none !important;
+  opacity:1 !important;
+  transform:none !important;
+  image-rendering:auto;
+}
+.cw-trauma-refined .cw-trauma-visual::after{
+  background:none !important;
+}
+.cw-trauma-refined .cw-trauma-soft-contours{
+  opacity:.11;
+}
+.cw-trauma-refined .cw-trauma-refined-content{
+  align-self:start;
+  padding-top:2px;
+}
+.cw-trauma-refined .cw-trauma-refined-lead{
+  font-size:.97rem;
+  line-height:1.68;
+  margin:0 0 12px;
+}
+.cw-trauma-refined .cw-trauma-refined-highlight{
+  font-size:1.25rem;
+  line-height:1.34;
+  margin:0 0 20px;
+}
+.cw-trauma-refined .cw-trauma-controls{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:9px;
+}
+.cw-trauma-refined .cw-trauma-item summary{
+  padding:12px 15px;
+  min-height:60px;
+  font-size:clamp(1.15rem,1.75vw,1.45rem);
+}
+.cw-trauma-refined .cw-trauma-item .cw-trauma-icon{
+  width:34px;
+  height:34px;
+  font-size:1.12rem;
+}
+.cw-trauma-refined .cw-trauma-explainer{
+  padding:0 19px 17px 64px;
+  font-size:.91rem;
+  line-height:1.58;
+}
+.cw-trauma-refined .cw-trauma-note{
+  margin-top:15px;
+  padding:12px 15px;
+}
+@media (min-width:761px) and (max-width:1050px){
+  .cw-trauma-refined .cw-trauma-refined-grid{
+    grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) !important;
+    gap:20px !important;
+  }
+  .cw-trauma-refined .cw-trauma-visual{
+    aspect-ratio:3 / 4;
+    max-height:555px;
+  }
+  .cw-trauma-refined .cw-trauma-item summary{
+    font-size:1.18rem;
+    padding:10px 11px;
+    min-height:54px;
+  }
+  .cw-trauma-refined .cw-trauma-explainer{
+    padding-left:16px;
+  }
+}
+@media (min-width:761px){
+  .cw-trauma-refined .cw-trauma-refined-grid{
+    display:grid !important;
+  }
+}
+@media(max-width:760px){
+  .cw-trauma-refined .cw-trauma-refined-grid{
+    grid-template-columns:1fr !important;
+    gap:23px;
+  }
+  .cw-trauma-refined .cw-trauma-visual{
+    aspect-ratio:1.05;
+    max-height:440px;
+    border-radius:100px 100px 15px 15px;
+  }
+  .cw-trauma-refined .cw-trauma-heading-restored h2{
+    font-size:clamp(2.4rem,9vw,3.5rem);
+  }
+}
