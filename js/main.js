@@ -365,7 +365,7 @@ document.querySelectorAll("img[data-cw-fallback]").forEach((img) => {
 });
 
 
-/* Owner-only feedback carousel mockup: a real pause control for the moving cards. */
+/* Support-topic carousel: accessible pause and resume controls for moving cards. */
 (() => {
   const section = document.querySelector("[data-cw-feedback]");
   if (!section) return;
@@ -376,7 +376,7 @@ document.querySelectorAll("img[data-cw-fallback]").forEach((img) => {
   const sync = () => {
     const paused = section.classList.contains("is-paused");
     button.setAttribute("aria-pressed", String(paused));
-    button.setAttribute("aria-label", paused ? "Resume moving sample cards" : "Pause moving sample cards");
+    button.setAttribute("aria-label", paused ? "Resume moving support cards" : "Pause moving support cards");
     if (label) label.textContent = paused ? "Resume movement" : "Pause movement";
     if (icon) icon.textContent = paused ? "▶" : "Ⅱ";
   };
