@@ -389,3 +389,6 @@
     font-size:clamp(2.4rem,9vw,3.5rem);
   }
 }
+
+/* The approved photo includes its own very soft layer motif; avoid drawing a second overlay. */
+.cw-trauma-refined .cw-trauma-soft-contours { display: none !important; }
