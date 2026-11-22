@@ -1,6 +1,6 @@
 # Clarvia Wellness
 
-A responsive static website for [clarviawellness.com](https://clarviawellness.com), built with plain HTML, CSS and JavaScript.
+A responsive static website for [clarviawellness.com.au](https://clarviawellness.com.au), built with plain HTML, CSS and JavaScript.
 
 ## Pages
 
