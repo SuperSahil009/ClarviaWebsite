@@ -514,3 +514,52 @@
   .cw-feedback-marquee{mask-image:none}
   .cw-feedback-toggle{display:none}
 }
+
+
+/* Square-shaped testimonial-style sample cards: existing Clarvia palette and spacing. */
+.cw-feedback-section .cw-feedback-card{
+  flex:0 0 275px;
+  width:275px;
+  max-width:275px;
+  height:275px;
+  min-height:275px;
+  padding:22px 21px 18px;
+  border-radius:17px;
+  gap:12px;
+  overflow:hidden;
+}
+.cw-feedback-section .cw-feedback-card p{
+  font-size:clamp(1.04rem,1.25vw,1.17rem);
+  line-height:1.25;
+  flex:1;
+  overflow-wrap:break-word;
+}
+.cw-feedback-section .cw-feedback-card-status{
+  line-height:1.35;
+  font-size:.65rem;
+  font-weight:600;
+}
+@media(max-width:760px){
+  .cw-feedback-section .cw-feedback-card{
+    flex:0 0 244px;
+    width:244px;
+    max-width:244px;
+    height:244px;
+    min-height:244px;
+    padding:17px 16px 15px;
+    gap:9px;
+  }
+  .cw-feedback-section .cw-feedback-card p{font-size:1.07rem;line-height:1.2}
+  .cw-feedback-section .cw-feedback-card-status{font-size:.57rem}
+}
+@media(max-width:360px){
+  .cw-feedback-section .cw-feedback-card{
+    flex-basis:224px;
+    width:224px;
+    max-width:224px;
+    height:224px;
+    min-height:224px;
+    padding:14px 13px 12px;
+  }
+  .cw-feedback-section .cw-feedback-card p{font-size:.99rem;line-height:1.18}
+}
