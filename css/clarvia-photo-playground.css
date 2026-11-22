@@ -392,3 +392,70 @@
 
 /* The approved photo includes its own very soft layer motif; avoid drawing a second overlay. */
 .cw-trauma-refined .cw-trauma-soft-contours { display: none !important; }
+
+/* Photo-led getting-started journey */
+
+#getting-started.cw-start-journey {
+  background:radial-gradient(circle at 96% 7%,rgba(164,178,150,.16),transparent 31%),
+             linear-gradient(135deg,#faf6ef 0%,#f7f2e9 70%,#f0eee5 100%);
+  overflow:hidden;
+}
+#getting-started .cw-start-intro{max-width:950px;margin:0 auto 45px}
+#getting-started .cw-start-intro h2{font-size:clamp(2.9rem,5.4vw,5.6rem);line-height:1.04;letter-spacing:-.035em;color:#303a35;margin:0 0 16px}
+#getting-started .cw-start-intro .cw-lede{margin:0 auto;max-width:850px;color:#576058;font-size:clamp(1rem,1.45vw,1.15rem)}
+#getting-started .cw-start-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.8vw,33px);align-items:stretch}
+#getting-started .cw-start-card{min-width:0;display:flex;flex-direction:column;position:relative;background:#fffaf4;border:1px solid #e5e1d6;border-radius:22px;overflow:visible;box-shadow:0 14px 30px rgba(71,74,52,.09);transition:transform .2s ease,box-shadow .2s ease}
+#getting-started .cw-start-card:hover{transform:translateY(-3px);box-shadow:0 19px 36px rgba(71,74,52,.13)}
+#getting-started .cw-start-photo{display:block;width:100%;height:clamp(145px,17vw,230px);object-fit:cover;object-position:center;border-radius:21px 21px 0 0;background:#e4e8dd}
+#getting-started .cw-start-card-body{display:flex;flex-direction:column;gap:13px;flex:1;padding:clamp(19px,2.3vw,30px)}
+#getting-started .cw-start-card-header{display:flex;align-items:flex-start;gap:15px}
+#getting-started .cw-start-symbol{flex:none;display:grid;place-items:center;width:53px;height:53px;border-radius:50%;background:#ecede0;color:#526647;font-size:1.55rem;line-height:1}
+#getting-started .cw-start-card-heading{min-width:0}
+#getting-started .cw-start-number{display:block;color:#71815d;font:700 .64rem/1.35 Inter,Arial,sans-serif;letter-spacing:.12em;margin:2px 0 8px}
+#getting-started .cw-start-number span{letter-spacing:0;padding:0 4px;color:#9aa889}
+#getting-started .cw-start-card h3{font-size:clamp(1.45rem,2.05vw,2.15rem);line-height:1.08;font-weight:500;color:#2f3b34;margin:0}
+#getting-started .cw-start-card-body>p{color:#465249;font-size:clamp(.91rem,1.09vw,1rem);line-height:1.6;margin:0 0 6px}
+#getting-started .cw-start-detail{margin-top:auto;border-top:1px solid #e5e6d9;padding-top:14px}
+#getting-started .cw-start-detail summary{cursor:pointer;font:700 .8rem/1.4 Inter,Arial,sans-serif;color:#4e634b;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+#getting-started .cw-start-detail summary::-webkit-details-marker{display:none}
+#getting-started .cw-start-detail summary:after{content:"+";display:grid;place-items:center;width:25px;height:25px;background:#eaf0e5;border-radius:50%;font-size:1.1rem;flex:none}
+#getting-started .cw-start-detail[open] summary:after{content:"−"}
+#getting-started .cw-start-detail summary:focus-visible{outline:3px solid #607a62;outline-offset:4px;border-radius:5px}
+#getting-started .cw-start-detail p{font-size:.86rem;line-height:1.6;color:#536356;margin:11px 0 0}
+#getting-started .cw-start-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:15px;margin:40px 0 21px}
+#getting-started .cw-start-actions .button{min-height:52px;padding:15px 29px;border-radius:999px;text-align:center;font-size:.97rem;display:inline-flex;justify-content:center;align-items:center;gap:15px;box-sizing:border-box;text-decoration:none}
+#getting-started .cw-start-actions .cw-start-primary{background:#536846;border-color:#536846;color:#fff}
+#getting-started .cw-start-actions .cw-start-primary:hover{background:#43573b;border-color:#43573b;color:#fff}
+#getting-started .cw-start-actions .cw-start-secondary{background:transparent;border:1.5px solid #5e7254;color:#4d6544}
+#getting-started .cw-start-actions .cw-start-secondary:hover{background:#e8ede3;color:#354a35}
+#getting-started .cw-start-reassurance{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0;color:#4d5b4d;font:.84rem/1.5 Inter,Arial,sans-serif}
+#getting-started .cw-start-reassurance span{padding:0 20px;border-right:1px solid #afb9a8}
+#getting-started .cw-start-reassurance span:last-child{border-right:0}
+@media(min-width:901px){
+  #getting-started .cw-start-card:not(:last-child):after{content:"→";position:absolute;z-index:2;right:calc(clamp(16px,2.8vw,33px) / -2 - 17px);top:34%;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e6e9db;border:1px solid #d8deca;color:#495f42;font:700 1.3rem/1 Arial,sans-serif;box-shadow:0 2px 8px rgba(45,66,40,.09);pointer-events:none}
+}
+@media(max-width:900px){
+  #getting-started .cw-start-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #getting-started .cw-start-photo{height:190px}
+  #getting-started .cw-start-card-body{padding:22px}
+}
+@media(max-width:600px){
+  #getting-started.cw-start-journey{padding-block:64px}
+  #getting-started .cw-start-intro{margin-bottom:28px}
+  #getting-started .cw-start-intro h2{font-size:clamp(2.6rem,10vw,3.5rem)}
+  #getting-started .cw-start-intro .cw-lede{font-size:.98rem;line-height:1.55}
+  #getting-started .cw-start-cards{grid-template-columns:minmax(0,1fr);gap:22px}
+  #getting-started .cw-start-card{border-radius:18px;max-width:460px;width:100%;margin-inline:auto}
+  #getting-started .cw-start-photo{height:185px;border-radius:17px 17px 0 0}
+  #getting-started .cw-start-card-body{padding:21px;gap:12px}
+  #getting-started .cw-start-card h3{font-size:1.75rem}
+  #getting-started .cw-start-symbol{width:45px;height:45px;font-size:1.35rem}
+  #getting-started .cw-start-actions{margin-top:30px;gap:11px}
+  #getting-started .cw-start-actions .button{width:100%;max-width:460px;min-height:51px;padding:13px 18px}
+  #getting-started .cw-start-reassurance{row-gap:10px;font-size:.75rem}
+  #getting-started .cw-start-reassurance span{padding:0 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  #getting-started .cw-start-card{transition:none}
+  #getting-started .cw-start-card:hover{transform:none}
+}
