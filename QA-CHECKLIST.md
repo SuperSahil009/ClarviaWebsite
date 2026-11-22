@@ -51,7 +51,7 @@ Update these items with the final results before opening the pull request.
 - [ ] Confirm how the $400 package takes one payment and schedules three appointments. Keep it enquiry-only until confirmed.
 - [ ] Establish and review a separate secure paid-client intake and informed-consent workflow. Do not reuse the short introductory-call form as paid counselling intake.
 - [ ] Decide on a secure referral form only if needed. Until then, retain the minimal email pathway and instruct referrers not to email sensitive clinical narratives.
-- [ ] Test delivery of enquiry/referral emails to `care@clarviawellness.com`, including spam handling.
+- [ ] Test delivery of enquiry/referral emails to `care@clarviawellness.com.au`, including spam handling.
 - [ ] Confirm Hostinger deploy status and inspect the live site only after owner-approved merge to `main`.
 
 ## Manual visual and accessibility review
