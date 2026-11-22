@@ -563,3 +563,43 @@
   }
   .cw-feedback-section .cw-feedback-card p{font-size:.99rem;line-height:1.18}
 }
+
+
+/* One uninterrupted horizontal line, as requested: 20 squares loop seamlessly. */
+.cw-feedback-section .cw-feedback-marquee{
+  display:block;
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
+}
+.cw-feedback-section .cw-feedback-row-single{
+  display:block;
+  width:100%;
+  overflow:hidden;
+}
+.cw-feedback-section .cw-feedback-row-single .cw-feedback-track{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:stretch;
+  width:max-content;
+  animation:cw-feedback-glide 118s linear infinite;
+}
+.cw-feedback-section .cw-feedback-row-single .cw-feedback-set{
+  display:flex;
+  flex-wrap:nowrap;
+  flex:none;
+  align-items:stretch;
+}
+.cw-feedback-section .cw-feedback-row-single .cw-feedback-card{flex-shrink:0;}
+@media(max-width:760px){
+  .cw-feedback-section .cw-feedback-row-single .cw-feedback-track{
+    animation-duration:145s;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .cw-feedback-section .cw-feedback-row-single{overflow-x:auto}
+  .cw-feedback-section .cw-feedback-row-single .cw-feedback-track{
+    animation:none !important;
+    transform:none !important;
+  }
+}
