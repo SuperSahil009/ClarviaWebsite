@@ -330,7 +330,7 @@ window.addEventListener("message", (event) => {
   const counter=root.querySelector("[data-cw-slide-count]");
   const slideName=root.querySelector("[data-cw-slide-name]");
   const toggle=root.querySelector("[data-cw-toggle]");
-  const names=["A calming space","Online counselling","Alcohol awareness","Space to reflect on substance use","Disability and everyday goals","Mindfulness and grounding"];
+  const names=["Mindfulness and grounding","A calming space","Online counselling","Alcohol awareness","Space to reflect on substance use","Disability and everyday goals"];
   const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)");
   let index=0,paused=prefersReduced.matches,timer=null;
   const show=n=>{
