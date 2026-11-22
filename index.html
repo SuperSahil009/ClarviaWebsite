@@ -150,6 +150,133 @@
   }
   #support.cw-carry-stories .cw-carry-choice-text > strong { font-size: 1.1rem !important; }
 }
+
+/* Mobile-only repair: each emotional story is a compact photo + readable text row.
+   Override inherited full-width image rules without changing the desktop layout. */
+@media (max-width: 760px) {
+  #support.cw-carry-stories,
+  #support.cw-carry-stories .container,
+  #support.cw-carry-stories .cw-carry-grid,
+  #support.cw-carry-stories .cw-carry-list {
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+  #support.cw-carry-stories .cw-carry-grid,
+  #support.cw-carry-stories .cw-carry-list {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  #support.cw-carry-stories button.cw-carry-choice {
+    display: grid !important;
+    grid-template-columns: 96px minmax(0, 1fr) 16px !important;
+    gap: 12px !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 91px !important;
+    margin: 0 0 11px !important;
+    padding: 8px !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 16px;
+  }
+  #support.cw-carry-stories button.cw-carry-choice > img.cw-carry-thumb {
+    display: block !important;
+    width: 96px !important;
+    min-width: 96px !important;
+    max-width: 96px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    max-height: 74px !important;
+    aspect-ratio: 48 / 37 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    flex: none !important;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: auto !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text > strong {
+    display: block !important;
+    font-size: clamp(1.12rem, 4.65vw, 1.34rem) !important;
+    font-weight: 500 !important;
+    line-height: 1.13 !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text > small {
+    display: block !important;
+    font-size: .56rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: .045em !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+  #support.cw-carry-stories .cw-carry-chevron {
+    display: block !important;
+    margin: 0 !important;
+    justify-self: center !important;
+    font-size: 1.6rem !important;
+    line-height: 1 !important;
+  }
+  #support.cw-carry-stories #cw-support-panel.cw-carry-panel {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 0 14px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  #support.cw-carry-stories .cw-carry-panel-visual {
+    width: 100% !important;
+    height: clamp(170px, 49vw, 225px) !important;
+    overflow: hidden !important;
+  }
+  #support.cw-carry-stories .cw-carry-panel-visual img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+  }
+  #support.cw-carry-stories .cw-carry-panel-body {
+    padding: clamp(18px, 5vw, 24px) !important;
+    min-width: 0 !important;
+  }
+  #support.cw-carry-stories .cw-carry-panel-body h3 {
+    font-size: clamp(1.85rem, 8.5vw, 2.35rem) !important;
+    line-height: 1.1 !important;
+    overflow-wrap: break-word !important;
+  }
+}
+@media (max-width: 360px) {
+  #support.cw-carry-stories button.cw-carry-choice {
+    grid-template-columns: 78px minmax(0, 1fr) 13px !important;
+    gap: 8px !important;
+  }
+  #support.cw-carry-stories button.cw-carry-choice > img.cw-carry-thumb {
+    width: 78px !important;
+    min-width: 78px !important;
+    max-width: 78px !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+  }
+}
 </style>
 </head>
   <body class="home-page">
