@@ -19,6 +19,138 @@
     <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="css/clarvia-refresh.css" />
   <link rel="stylesheet" href="css/clarvia-photo-playground.css" />
+
+<style id="cw-desktop-carry-fix">
+/* Critical section-scoped styling keeps desktop emotion stories intact
+   even if a previously cached shared stylesheet is served. */
+@media (min-width: 761px) {
+  #support.cw-carry-stories .cw-carry-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important;
+    align-items: start !important;
+    gap: clamp(20px, 3vw, 38px) !important;
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+  #support.cw-carry-stories .cw-carry-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px;
+    min-width: 0 !important;
+  }
+  #support.cw-carry-stories button.cw-carry-choice {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) 18px !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 88px !important;
+    gap: 15px !important;
+    padding: 8px 13px 8px 8px !important;
+    box-sizing: border-box;
+    text-align: left;
+    overflow: hidden;
+  }
+  #support.cw-carry-stories button.cw-carry-choice > img.cw-carry-thumb {
+    display: block !important;
+    inline-size: 112px !important;
+    block-size: 72px !important;
+    width: 112px !important;
+    height: 72px !important;
+    max-width: 112px !important;
+    min-width: 112px !important;
+    max-height: 72px !important;
+    min-height: 72px !important;
+    aspect-ratio: 14 / 9;
+    object-fit: cover !important;
+    border-radius: 10px;
+    flex: none !important;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: auto !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    gap: 4px;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text > strong {
+    display: block;
+    width: 100%;
+    line-height: 1.12 !important;
+    font-size: clamp(1.15rem, 1.45vw, 1.52rem) !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text > small {
+    display: block;
+    width: 100%;
+    font-size: .62rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: .08em;
+    white-space: normal;
+  }
+  #support.cw-carry-stories .cw-carry-chevron {
+    display: block;
+    margin: 0 !important;
+    justify-self: center;
+  }
+  #support.cw-carry-stories #cw-support-panel.cw-carry-panel {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    align-self: start;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  #support.cw-carry-stories .cw-carry-panel-visual {
+    width: 100% !important;
+    height: clamp(215px, 23vw, 285px) !important;
+    overflow: hidden;
+  }
+  #support.cw-carry-stories .cw-carry-panel-visual img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+  }
+  #support.cw-carry-stories .cw-carry-panel-body {
+    display: block !important;
+    padding: clamp(22px, 2.7vw, 36px) !important;
+    overflow-wrap: normal;
+  }
+  #support.cw-carry-stories .cw-carry-panel-body h3 {
+    font-size: clamp(1.9rem, 2.8vw, 2.85rem) !important;
+    line-height: 1.12 !important;
+    word-break: normal;
+  }
+}
+@media (min-width: 761px) and (max-width: 1010px) {
+  #support.cw-carry-stories .cw-carry-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+  #support.cw-carry-stories button.cw-carry-choice {
+    grid-template-columns: 86px minmax(0, 1fr) 16px !important;
+    gap: 10px !important;
+  }
+  #support.cw-carry-stories button.cw-carry-choice > img.cw-carry-thumb {
+    inline-size: 86px !important;
+    width: 86px !important;
+    min-width: 86px !important;
+    max-width: 86px !important;
+    block-size: 67px !important;
+    height: 67px !important;
+    min-height: 67px !important;
+    max-height: 67px !important;
+  }
+  #support.cw-carry-stories .cw-carry-choice-text > strong { font-size: 1.1rem !important; }
+}
+</style>
 </head>
   <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
