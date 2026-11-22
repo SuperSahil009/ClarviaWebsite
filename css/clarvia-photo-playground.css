@@ -128,3 +128,113 @@
 @media(max-width:900px){.cw-about-hero-grid,.cw-about-why-grid,.cw-about-credentials-grid{grid-template-columns:1fr}.cw-about-hero-gallery{height:490px;max-width:670px}.cw-about-grad-main{height:440px}.cw-about-grad-detail{height:245px}.cw-about-why-photo{height:410px}}
 @media(max-width:600px){.cw-about-photo-story .cw-mindful-portrait{height:180px}.cw-portrait-note{bottom:-35px}.cw-about-hero{padding-block:55px 72px}.cw-about-hero h1{font-size:clamp(3rem,11vw,4.7rem)}.cw-about-hero-gallery{height:380px;margin-bottom:22px}.cw-about-grad-main{height:360px;width:73%}.cw-about-grad-detail{height:205px;width:46%;border-width:5px}.cw-story-grid{grid-template-columns:1fr}.cw-story-card>img{aspect-ratio:1.35}.cw-about-why-photo{height:330px}}
 @media(prefers-reduced-motion:reduce){.cw-about-hero-anchors a{transition:none}}
+
+
+/* Trauma layers redesign — photo-led, quietly interactive, earthy neutrals. */
+.cw-trauma-refined{
+  background:linear-gradient(115deg,#f8f5ee 0%,#f4efe5 58%,#e9ece3 100%);
+  color:#3f4336;
+}
+.cw-trauma-refined .cw-trauma-refined-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  align-items:center;
+  gap:clamp(28px,4.5vw,76px);
+  max-width:1240px;
+}
+.cw-trauma-refined .cw-trauma-figure{min-width:0}
+.cw-trauma-refined .cw-trauma-visual{
+  aspect-ratio:.87;
+  max-height:760px;
+  border-radius:28px 145px 28px 28px;
+  box-shadow:0 22px 54px rgba(75,65,47,.14);
+  background:#d8d6c9;
+}
+.cw-trauma-refined .cw-trauma-visual>img{
+  width:100%;height:100%;object-fit:cover;object-position:center 53%;
+  filter:saturate(.87) contrast(.97) brightness(1.03) sepia(.055);
+}
+.cw-trauma-refined .cw-trauma-visual::after{
+  background:linear-gradient(165deg,rgba(66,47,32,.06),transparent 55%,rgba(59,48,37,.13));
+}
+.cw-trauma-refined .cw-trauma-soft-contours{
+  position:absolute;left:-18%;bottom:-13%;width:90%;height:49%;
+  z-index:3;pointer-events:none;opacity:.34;transform:rotate(-9deg);
+}
+.cw-trauma-refined .cw-trauma-soft-contours span{
+  display:block;position:absolute;border:1.5px solid rgba(255,249,232,.8);
+  border-radius:50%;width:90%;height:120%;
+}
+.cw-trauma-refined .cw-trauma-soft-contours span:nth-child(2){left:9%;top:13%;width:76%;height:100%}
+.cw-trauma-refined .cw-trauma-soft-contours span:nth-child(3){left:18%;top:25%;width:62%;height:80%}
+.cw-trauma-refined .cw-trauma-figure figcaption{
+  font-size:.83rem;line-height:1.55;color:#717365;margin-top:16px;
+}
+.cw-trauma-refined .cw-trauma-refined-content{min-width:0}
+.cw-trauma-refined .cw-trauma-refined-content>.cw-label{
+  color:#7c8064;letter-spacing:.18em;
+}
+.cw-trauma-refined .cw-trauma-refined-content>h2{
+  font-size:clamp(2.6rem,4vw,4.6rem);line-height:1.07;letter-spacing:-.028em;
+  color:#4b4136;margin:0 0 24px;text-wrap:balance;
+}
+.cw-trauma-refined .cw-trauma-refined-content>h2 em{
+  display:inline;color:#6d7753;font-weight:400;
+}
+.cw-trauma-refined-lead{font-size:clamp(1rem,1.2vw,1.13rem);line-height:1.78;color:#555449;margin-bottom:14px}
+.cw-trauma-refined-highlight{
+  color:#647052;font:italic clamp(1.24rem,1.8vw,1.65rem)/1.4 "EB Garamond",Georgia,serif;
+  margin:0 0 24px;
+}
+.cw-trauma-refined .cw-trauma-controls{display:grid;gap:10px}
+.cw-trauma-refined .cw-trauma-item{
+  border:1px solid #dfd9cb;border-radius:19px;
+  background:rgba(255,252,246,.8);
+  box-shadow:0 5px 16px rgba(91,81,62,.045);
+  transition:background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.cw-trauma-refined .cw-trauma-item[open]{
+  background:linear-gradient(125deg,#e9e9da,#f3f0e5);
+  border-color:#b4bba3;box-shadow:0 9px 23px rgba(91,81,62,.075);
+}
+.cw-trauma-refined .cw-trauma-item summary{
+  display:flex;gap:14px;align-items:center;
+  padding:15px 18px;font-family:"EB Garamond",Georgia,serif;
+  color:#403f33;font-size:clamp(1.24rem,1.8vw,1.61rem);font-weight:500;
+  line-height:1.2;
+}
+.cw-trauma-refined .cw-trauma-item summary:hover{background:rgba(214,216,193,.16)}
+.cw-trauma-refined .cw-trauma-icon{
+  flex:none;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#eee5d7;color:#6a7455;
+  font-family:Georgia,serif;font-size:1.43rem;font-weight:400;
+}
+.cw-trauma-refined .cw-trauma-item[open] .cw-trauma-icon{background:#d8d8bd}
+.cw-trauma-refined .cw-trauma-item .cw-trauma-plus{margin-left:auto}
+.cw-trauma-refined .cw-trauma-explainer{
+  padding:0 22px 21px 70px;
+  color:#56594c;font-size:.96rem;line-height:1.66;
+}
+.cw-trauma-refined .cw-trauma-explainer p{margin:0 0 10px}
+.cw-trauma-refined .cw-trauma-explainer p:last-child{margin:0}
+.cw-trauma-refined .cw-trauma-note{
+  background:rgba(227,230,214,.45);border-left:3px solid #acb39a;
+  color:#5c6452;border-radius:0 10px 10px 0;margin:22px 0 18px;
+}
+@media(max-width:920px){
+ .cw-trauma-refined .cw-trauma-refined-grid{grid-template-columns:1fr;max-width:750px}
+ .cw-trauma-refined .cw-trauma-visual{aspect-ratio:1.2;max-height:560px;border-radius:25px 110px 25px 25px}
+ .cw-trauma-refined .cw-trauma-refined-content>h2{font-size:clamp(2.5rem,6vw,4rem)}
+}
+@media(max-width:600px){
+ .cw-trauma-refined .cw-trauma-refined-grid{gap:24px}
+ .cw-trauma-refined .cw-trauma-visual{aspect-ratio:1.04;border-radius:22px 80px 22px 22px}
+ .cw-trauma-refined .cw-trauma-item summary{padding:12px 13px;gap:11px;font-size:1.3rem}
+ .cw-trauma-refined .cw-trauma-icon{width:33px;height:33px;font-size:1.22rem}
+ .cw-trauma-refined .cw-trauma-explainer{padding:0 17px 18px}
+ .cw-trauma-refined .cw-trauma-refined-content>h2{font-size:clamp(2.4rem,11vw,3.3rem)}
+}
+@media(prefers-reduced-motion:reduce){
+ .cw-trauma-refined .cw-trauma-item{transition:none}
+}
