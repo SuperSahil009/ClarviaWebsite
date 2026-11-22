@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="css/clarvia-refresh.css" />
-  <link rel="stylesheet" href="css/clarvia-photo-playground.css" />
+  <link rel="stylesheet" href="css/clarvia-photo-playground.css?v=getting-started-layout-2" />
 
 <style id="cw-desktop-carry-fix">
 /* Critical section-scoped styling keeps desktop emotion stories intact
@@ -275,6 +275,72 @@
     height: 70px !important;
     min-height: 70px !important;
     max-height: 70px !important;
+  }
+}
+</style>
+
+<style id="cw-getting-started-critical-layout">
+/* Scoped fallback ensures photo cards remain three compact columns, even when
+   shared styles or a previously cached stylesheet override the section. */
+#getting-started .cw-start-cards {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+  gap:clamp(16px,2.4vw,28px) !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  margin-inline:auto !important;
+}
+#getting-started .cw-start-card {
+  display:flex !important;
+  flex-direction:column !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  margin:0 !important;
+  box-sizing:border-box !important;
+  overflow:visible;
+}
+#getting-started .cw-start-card > img.cw-start-photo {
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  height:clamp(155px,15vw,210px) !important;
+  max-height:210px !important;
+  aspect-ratio:auto !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  flex:none !important;
+}
+#getting-started .cw-start-card-body {
+  display:flex !important;
+  flex-direction:column !important;
+  flex:1 1 auto !important;
+  min-width:0 !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+@media(min-width:761px) and (max-width:1050px) {
+  #getting-started .cw-start-cards{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    max-width:850px !important;
+  }
+  #getting-started .cw-start-card > img.cw-start-photo{
+    height:185px !important;
+    max-height:185px !important;
+  }
+}
+@media(max-width:760px) {
+  #getting-started .cw-start-cards{
+    grid-template-columns:minmax(0,1fr) !important;
+    max-width:460px !important;
+    gap:20px !important;
+  }
+  #getting-started .cw-start-card > img.cw-start-photo{
+    height:185px !important;
+    max-height:185px !important;
   }
 }
 </style>
