@@ -363,3 +363,26 @@ document.querySelectorAll("img[data-cw-fallback]").forEach((img) => {
   }, { once: true });
   if (img.complete && img.naturalWidth === 0 && img.dataset.cwFallback) img.src = img.dataset.cwFallback;
 });
+
+
+/* Support-topic carousel: accessible pause and resume controls for moving cards. */
+(() => {
+  const section = document.querySelector("[data-cw-feedback]");
+  if (!section) return;
+  const button = section.querySelector("[data-cw-feedback-toggle]");
+  const label = button?.querySelector("[data-cw-feedback-toggle-text]");
+  const icon = button?.querySelector("[data-cw-feedback-toggle-icon]");
+  if (!button) return;
+  const sync = () => {
+    const paused = section.classList.contains("is-paused");
+    button.setAttribute("aria-pressed", String(paused));
+    button.setAttribute("aria-label", paused ? "Resume moving support cards" : "Pause moving support cards");
+    if (label) label.textContent = paused ? "Resume movement" : "Pause movement";
+    if (icon) icon.textContent = paused ? "▶" : "Ⅱ";
+  };
+  button.addEventListener("click", () => {
+    section.classList.toggle("is-paused");
+    sync();
+  });
+  sync();
+})();
