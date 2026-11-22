@@ -209,36 +209,120 @@ window.addEventListener("message", (event) => {
 
 /* Approved Clarvia visual storytelling interactions */
 (() => {
-  const data = [
-    ["Stress, anxiety & feeling overwhelmed","Explore emotional patterns, grounding, mindfulness and practical coping skills that fit your everyday life.","general-counselling.html","Explore General Counselling"],
-    ["Life transitions, loneliness & uncertainty","Make room for adjustment, self-understanding, relationships and finding your footing through change.","general-counselling.html","Explore General Counselling"],
-    ["Alcohol or other drug concerns","Explore triggers, motivation, harm reduction, substance-use patterns and recovery-oriented support without judgement.","aod-counselling.html","Explore AOD Counselling"],
-    ["Worried about someone you love","Explore family support, healthier boundaries, communication and ways to navigate suitable services.","aod-counselling.html#family-support","Explore Family Support"],
-    ["Disability & everyday wellbeing support","Discuss individual wellbeing goals, adapted coping skills and support options. Service and funding suitability must be verified.","ndis-support.html","Explore Disability Support"],
-    ["Emotional regulation & coping tools","Explore optional grounding, mindfulness, breathing exercises and practical everyday regulation strategies.","general-counselling.html","Explore Practical Support"],
-    ["I don't know where to begin","Talk through what's concerning you, understand possible services and identify a realistic next step. Especially helpful when navigating AOD and family concerns.","referrals.html","Explore Support Navigation"]
+  const stories = [
+    {
+      title: "Everything feels like too much", eyebrow: "Stress, anxiety & overwhelm",
+      image: "assets/images/clarity-call.jpeg", alt: "A quiet moment of reflection indoors",
+      first: "You might be holding a lot at once—overthinking, emotional exhaustion or the pressure to keep going. Sometimes it feels like anxiety; other times it can be difficult to switch off.",
+      second: "Together, we can make space to understand what you're experiencing and explore practical ways to feel more grounded.",
+      help: ["Individual general counselling","Emotional regulation tools","Mindfulness and grounding practices","Understanding stress patterns"],
+      url: "general-counselling.html", button: "Explore General Counselling"
+    },
+    {
+      title: "Life feels uncertain right now", eyebrow: "Life transitions & loneliness",
+      image: "assets/images/clarvia-personal/beach-reflection.webp", alt: "A person looking out across the coastline",
+      first: "A move, a relationship change or simply feeling disconnected can leave you unsure of where you belong. Even positive changes can bring grief, doubt or loneliness.",
+      second: "We can explore what this transition means for you and find practical ways to feel steadier while you navigate it.",
+      help: ["Space to make sense of change","Support with loneliness and connection","Boundaries and self-understanding","Gentle coping strategies"],
+      url: "general-counselling.html", button: "Explore General Counselling"
+    },
+    {
+      title: "Something I use to cope is becoming a concern", eyebrow: "Alcohol or other drug concerns",
+      image: "assets/images/clarvia-service-aod.webp", alt: "Adult reflecting quietly on alcohol use at home",
+      first: "Maybe alcohol or another substance has started taking up more space in your life than you want. You may feel uncertain, worried or simply curious about your patterns.",
+      second: "There is room to talk openly, without judgement or pressure to have all the answers. We can look at the role substance use plays and possible next steps.",
+      help: ["Understanding patterns and triggers","Motivation and behaviour change","Harm-reduction strategies","Recovery-oriented support and referrals"],
+      url: "aod-counselling.html", button: "Explore AOD Counselling"
+    },
+    {
+      title: "I'm worried about someone I care about", eyebrow: "Family support & guidance",
+      image: "assets/images/compassionate-conversation.webp", alt: "A supportive moment between people",
+      first: "When someone you love is struggling, you might feel worried, helpless or exhausted by trying to find the right thing to say.",
+      second: "Your wellbeing matters too. We can explore boundaries, communication and ways to support someone without losing sight of yourself.",
+      help: ["Family and loved-one guidance","Communication and boundary setting","Support pathways and options","Looking after your own wellbeing"],
+      url: "aod-counselling.html#family-support", button: "Explore Family Support"
+    },
+    {
+      title: "I want support that fits my daily life", eyebrow: "Disability & everyday wellbeing",
+      image: "assets/images/clarvia-service-disability.webp", alt: "Wheelchair user preparing food alongside a supportive companion",
+      first: "Support should reflect your own goals, routines and preferences—not a one-size-fits-all idea of what wellbeing looks like.",
+      second: "We can discuss what matters to you and whether Clarvia's individual support is a suitable fit. Funding options need to be checked separately.",
+      help: ["Person-centred goal exploration","Everyday coping and routines","Confidence and self-advocacy","Individual suitability and funding discussion"],
+      url: "ndis-support.html", button: "Explore Disability Support"
+    },
+    {
+      title: "I need help managing my emotions", eyebrow: "Emotional regulation & coping",
+      image: "assets/images/clarvia-personal/shree-mindfulness-by-water.webp", alt: "A peaceful mindfulness moment beside water",
+      first: "Sometimes feelings arrive quickly, linger longer than expected or feel difficult to name. You might notice yourself shutting down, reacting strongly or carrying tension.",
+      second: "Together we can gently explore what your emotions are telling you and practise tools that fit your everyday life.",
+      help: ["Noticing patterns and triggers","Grounding and mindfulness options","Practical emotional regulation tools","Self-understanding and coping skills"],
+      url: "general-counselling.html", button: "Explore Coping Support"
+    },
+    {
+      title: "I don't know where to begin", eyebrow: "Find your first step",
+      image: "assets/images/australian-riverside-dawn.webp", alt: "A peaceful Australian riverside at dawn",
+      first: "You may know something feels difficult without knowing what kind of help would be right. There is no perfect way to begin.",
+      second: "A free introductory conversation can help you ask questions, hear what Clarvia offers and work out whether a session here—or another service—might suit.",
+      help: ["A no-pressure first conversation","Space to ask questions","Clarifying support options","Understanding suitable next steps"],
+      url: "https://calendly.com/shreegaur/30min", button: "Book a Free Introductory Call"
+    }
   ];
-  const tabs = Array.from(document.querySelectorAll("[data-cw-choice]"));
+  const choices = [...document.querySelectorAll("[data-cw-choice]")];
   const panel = document.querySelector("#cw-support-panel");
-  const updatePanel = (n, focus) => {
-    if (!panel || !tabs[n]) return;
-    tabs.forEach((tab,i)=>{tab.setAttribute("aria-selected",String(i===n));tab.tabIndex=i===n?0:-1});
-    panel.setAttribute("aria-labelledby",tabs[n].id);
-    panel.querySelector("[data-cw-panel-title]").textContent=data[n][0];
-    panel.querySelector("[data-cw-panel-copy]").textContent=data[n][1];
-    const link=panel.querySelector("[data-cw-panel-link]");
-    link.href=data[n][2];link.textContent=data[n][3]+" →";
-    if(focus)tabs[n].focus();
+  const layout = document.querySelector("[data-cw-story-layout]");
+  const list = layout?.querySelector(".cw-carry-list");
+  const mobile = window.matchMedia("(max-width: 760px)");
+  let selected = 0;
+  const arrangePanel = () => {
+    if (!panel || !list || !layout || !choices[selected]) return;
+    if (mobile.matches) choices[selected].after(panel);
+    else layout.append(panel);
   };
-  tabs.forEach((tab,i)=>{
-    tab.addEventListener("click",()=>updatePanel(i,false));
-    tab.addEventListener("keydown",e=>{
-      if(!["ArrowDown","ArrowUp","ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
-      e.preventDefault();
-      const n=e.key==="Home"?0:e.key==="End"?tabs.length-1:(i+((e.key==="ArrowDown"||e.key==="ArrowRight")?1:-1)+tabs.length)%tabs.length;
-      updatePanel(n,true);
+  const showStory = (index, moveFocus = false) => {
+    if (!panel || !choices[index]) return;
+    selected = index;
+    choices.forEach((choice, i) => {
+      const current = i === index;
+      choice.setAttribute("aria-expanded", String(current));
+      choice.classList.toggle("is-selected", current);
+    });
+    const story = stories[index];
+    const photo = panel.querySelector("[data-cw-panel-image]");
+    photo.src = story.image;
+    photo.alt = story.alt;
+    panel.querySelector("[data-cw-panel-eyebrow]").textContent = story.eyebrow;
+    panel.querySelector("[data-cw-panel-title]").textContent = story.title;
+    panel.querySelector("[data-cw-panel-copy]").textContent = story.first;
+    panel.querySelector("[data-cw-panel-secondary]").textContent = story.second;
+    const help = panel.querySelector("[data-cw-panel-help]");
+    help.replaceChildren(...story.help.map((line) => {
+      const item = document.createElement("li");
+      item.textContent = line;
+      return item;
+    }));
+    const link = panel.querySelector("[data-cw-panel-link]");
+    link.href = story.url;
+    link.replaceChildren(document.createTextNode(story.button + " "));
+    const arrow = document.createElement("span");
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+    link.append(arrow);
+    panel.setAttribute("aria-labelledby", choices[index].id);
+    arrangePanel();
+    if (moveFocus) choices[index].focus();
+  };
+  choices.forEach((choice, index) => {
+    choice.addEventListener("click", () => showStory(index));
+    choice.addEventListener("keydown", (event) => {
+      if (!["ArrowDown","ArrowUp","Home","End"].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === "Home" ? 0 : event.key === "End" ? choices.length - 1 :
+        (index + (event.key === "ArrowDown" ? 1 : -1) + choices.length) % choices.length;
+      showStory(next, true);
     });
   });
+  mobile.addEventListener?.("change", arrangePanel);
+  showStory(0);
   const root=document.querySelector("[data-cw-slideshow]");
   if(!root)return;
   const slides=[...root.querySelectorAll("[data-cw-slide]")];
@@ -246,7 +330,7 @@ window.addEventListener("message", (event) => {
   const counter=root.querySelector("[data-cw-slide-count]");
   const slideName=root.querySelector("[data-cw-slide-name]");
   const toggle=root.querySelector("[data-cw-toggle]");
-  const names=["A calming space","Online counselling","Alcohol awareness","Space to reflect on substance use","Disability and everyday goals","Mindfulness and grounding"];
+  const names=["Mindfulness and grounding","A calming space","Online counselling","Alcohol awareness","Space to reflect on substance use","Disability and everyday goals"];
   const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)");
   let index=0,paused=prefersReduced.matches,timer=null;
   const show=n=>{
